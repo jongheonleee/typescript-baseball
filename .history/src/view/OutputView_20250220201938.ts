@@ -1,4 +1,3 @@
-// > 사용자에게 보여줄 출력값을 처리
 const OutputView = {
 
     // 사용자에게 게임 시작 문구를 출력함 
@@ -10,11 +9,8 @@ const OutputView = {
     printCurrentState : (ball: number, strike: number) => {
         if (ball === 0) {
             return `${strike}스트라이크`;
-        } else if (strike === 0) {
-            return `${ball}볼`;
-        } else {
-            return `${ball}볼 ${strike}스트라이크`;
         }
+        return '1볼 2스트라이크';
     },
 
 

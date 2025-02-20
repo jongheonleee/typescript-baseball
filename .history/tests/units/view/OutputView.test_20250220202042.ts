@@ -1,0 +1,34 @@
+import OutputView  from '../../../src/view/OutputView';
+
+
+describe('사용자에게 보여줄 출력값을 처리하는 객체 단위 테스트', () => {
+
+    // 1. 사용자에게 게임 시작 문구를 출력한다
+    test('사용자에게 게임 시작 문구를 출력한다.', () => {
+        expect(OutputView.printGameStart()).toBe('숫자 야구 게임을 시작합니다.');
+    })
+
+    // 2. 사용자에게 'a볼 b스트라이크' 형식으로 피드백 문구를 출력한다.
+
+    // 1볼 2스트라이크 
+    test('사용자의 현재 상태가 1볼 2스트라이크인 경우 -> "1볼 2스트라이크" 출력한다.', () => {
+        expect(OutputView.printCurrentState(1, 2)).toBe('1볼 2스트라이크');
+    })
+
+    // 2스트라이크
+    test('사용자의 현재 상태가 0볼 2스트라이크인 경우 -> "2스트라이크" 출력한다.', () => {
+        expect(OutputView.printCurrentState(0, 2)).toBe('2스트라이크');
+    })
+
+    // 3볼
+    test('사용자의 현재 상태가 3볼 0스트라이크인 경우 -> "3볼" 출력한다.', () => {
+        expect(OutputView.printCurrentState(3, 0)).toBe('3볼');
+    })
+
+
+    // 3. 정답을 맞출 경우 종료 문구를 출력한다. 
+    test('정답을 맞출 경우 종료 문구를 출력한다.', () => {
+        expect(OutputView.printGameOver()).toBe('3개의 숫자를 모두 맞히셨습니다! 게임 종료');
+    })
+
+})

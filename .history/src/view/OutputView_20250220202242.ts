@@ -1,4 +1,3 @@
-// > 사용자에게 보여줄 출력값을 처리
 const OutputView = {
 
     // 사용자에게 게임 시작 문구를 출력함 
@@ -15,6 +14,7 @@ const OutputView = {
         } else {
             return `${ball}볼 ${strike}스트라이크`;
         }
+        return '1볼 2스트라이크';
     },
 
 

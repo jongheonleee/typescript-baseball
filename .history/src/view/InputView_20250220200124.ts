@@ -42,7 +42,7 @@ const InputView = {
     getAnswer: (answer: string) => {
         const patternForAnswer = /^[01]+$/;
         if (!patternForAnswer.test(answer)) {
-            throw new Error('0, 1 이외의 값을 입력할 수 없습니다.');
+            throw new Error('1, 2를 입력할 수 없습니다.');
         }
 
         const mark = parseInt(answer, 10);
