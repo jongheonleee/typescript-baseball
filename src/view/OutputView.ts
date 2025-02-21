@@ -1,6 +1,5 @@
 // > 사용자에게 보여줄 출력값을 처리
 const OutputView = {
-
     // 사용자에게 게임 시작 문구를 출력함 
     printGameStart : () => {
         return '숫자 야구 게임을 시작합니다.';
@@ -22,10 +21,6 @@ const OutputView = {
     printGameOver : () => {
         return '3개의 숫자를 모두 맞히셨습니다! 게임 종료';
     }
-
-
-
-
 }
 
 export default OutputView;

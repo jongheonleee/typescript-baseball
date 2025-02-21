@@ -2,7 +2,6 @@ import * as readlineSync from 'readline-sync';
 import InputView from "../view/InputView";
 import OutputView from "../view/OutputView";
 import Service from '../service/GameService'
-import readline from 'readline';
 import GameService from '../service/GameService';
 import PlayerBalls from '../domain/PlayerBalls';
 import Balls from '../domain/Balls'
@@ -10,7 +9,6 @@ import Computer from '../domain/Computer';
 
 // 게임의 흐름 관장하는 객체 
 export default class GameController {
-
     // 게임 진행 여부 기록
     constructor(
         private running : boolean = false,

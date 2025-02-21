@@ -40,6 +40,4 @@ export default class Computer {
     public getBalls() {
         return Object.freeze([...this.commputerBalls]); // 배열을 복사한 후, 그 배열을 동결하여 변경 불가능하게 만든다
     }
-
-
 }
