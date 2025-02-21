@@ -1,45 +1,32 @@
-
-import Ball from './Ball';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 컴퓨터 역할, 난수를 생성하고 그에 맞는 Ball 객체들을 소지하고 있음
-export default class Computer {
-
-    private begin:number;
-    private end:number;
-    private commputerBalls:Array<Ball> = new Array<Ball>();
-
-    constructor(begin:number, end:number) {
+class Computer {
+    constructor(begin, end) {
+        this.commputerBalls = new Array();
         this.begin = begin;
         this.end = end;
     }
-
-    public getRandomNumber() {
+    getRandomNumber() {
         return Math.floor(Math.random() * this.end + this.begin);
     }
-
-    public addBall(ball: Ball) {
+    addBall(ball) {
         if (!this.isValidSize()) {
             throw new Error('볼을 이미 3개 등록하였습니다.');
         }
-
         this.commputerBalls.push(ball);
     }
-
-    public getBall(index:number) : Ball {
+    getBall(index) {
         return this.commputerBalls[index];
     }
-
-    public clearBalls() {
+    clearBalls() {
         this.commputerBalls.length = 0;
     }
-
-    private isValidSize() {
+    isValidSize() {
         return this.commputerBalls.length < 3;
     }
-
-    public getBalls() {
+    getBalls() {
         return Object.freeze([...this.commputerBalls]); // 배열을 복사한 후, 그 배열을 동결하여 변경 불가능하게 만든다
     }
-
-
 }
+exports.default = Computer;

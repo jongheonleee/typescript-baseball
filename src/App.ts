@@ -1,11 +1,12 @@
+import GameController from "./controller/GameController";
+
 // 애플리케이션 
-class App {
-    play() {
-        console.log('Playing!');
+export default class App {
+    run() {
+        const controller = new GameController();
+        controller.play();
     }
 }
 
-export default App;
-
 const app = new App();
-app.play();
+app.run();
