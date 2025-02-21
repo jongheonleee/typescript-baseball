@@ -11,7 +11,6 @@ const rl = readline.createInterface({
 // 게임의 흐름 관장하는 객체 
 class GameController {
 
-    // 게임 진행 여부 기록
     private running : boolean;
 
     constructor() {
@@ -25,28 +24,14 @@ class GameController {
 
     // 게임 플레이 처리 
     play() {
-        // 게임 진행 여부 파악 
-        const running:boolean = true;
+        const running : boolean = true;
 
+        while (running) {
 
-        // 게임 진행 
-        do {
-            // 사용자로부터 입력값 받기 
-            const numbersStr = this.getInput(InputView.printAskNumber());
-        //    const numbers = InputView.getNumbers(numbersStr);
-
-           // 사용자 볼 정보 업데이트
-
-           // 사용자 볼 정보와 컴퓨터 볼 정보 비교 
-
-           // 피드백 출력 
-        
-           // 만약, 다 맞으면 게임 종료
-                // 종료할 건지, 재시작할 건지 되묻기 
-        } while(running);
+        }
     }
 
-    // 게임 종료  
+    // 게임 종료 문구 
     end() {
         console.log(OutputView.printGameOver());
         this.getInput(InputView.printAskGameEndOrRestart());

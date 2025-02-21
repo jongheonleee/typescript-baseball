@@ -42,7 +42,6 @@ class GameController {
            // 피드백 출력 
         
            // 만약, 다 맞으면 게임 종료
-                // 종료할 건지, 재시작할 건지 되묻기 
         } while(running);
     }
 
