@@ -69,10 +69,10 @@ class GameController {
             // 사용자 볼 정보와 컴퓨터 볼 정보 비교 
             const result = this.service.compare();
             // 피드백 출력 
-            console.log(OutputView_1.default.printCurrentState(result.ball, result.strike));
+            console.log(result.getCurrentState());
             // 만약, 다 맞으면 게임 종료
             // 종료할 건지, 재시작할 건지 되묻기 
-            if (result.strike === 3) {
+            if (result.isThreeStrikeOut()) {
                 // 게임 종료 
                 this.end();
                 const answer = readlineSync.question(InputView_1.default.printAskGameEndOrRestart());

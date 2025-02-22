@@ -220,6 +220,7 @@ const states: Array<State> = [
     new TwoStrikeOneBall(),
     new ThreeStrike()
 ];
+
 // 특정 상태 조회 
 export const getInstance = (ball:number, strike:number) : State => {
     return states.find((state) => state.isSame(ball, strike) === true)!;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const State_1 = require("../domain/State");
 // compare() 부분이 변동 될 가능성이 큼 
 class GameService {
     constructor(balls, playerBalls, computer) {
@@ -32,18 +33,9 @@ class GameService {
                 countOfStrike++;
             }
         }
-        // 3 스트라이크면 바로 반환
-        if (countOfStrike === 3) {
-            return { ball: 0, strike: countOfStrike };
-        }
         // 볼 카운팅 
         const computerBalls = this.computer.getBalls();
         const playerBalls = this.playerBalls.getBalls();
-        // - 집합 활용하기 -> 추후에 개발 예정 
-        // const setComputerAndPlayerBalls : Set<string> = new Set([
-        //     ...computerBalls.map((ball) => JSON.stringify(ball)),
-        //     ...playerBalls.map((ball) => JSON.stringify(ball))
-        // ])
         for (let i = 0; i < 3; i++) {
             const computerBall = computerBalls[i];
             for (let j = 0; j < 3; j++) {
@@ -54,10 +46,7 @@ class GameService {
             }
         }
         countOfBall = countOfBall - countOfStrike;
-        return {
-            ball: countOfBall,
-            strike: countOfStrike
-        };
+        return (0, State_1.getInstance)(countOfBall, countOfStrike);
     }
 }
 exports.default = GameService;
