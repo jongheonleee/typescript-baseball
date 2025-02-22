@@ -29,6 +29,7 @@ export default class GameController {
         // 게임 진행 
         this.start();
         this.running = true;
+
         // 컴퓨터 볼 생성 
         this.service.createComputerBalls();
         do {
@@ -42,11 +43,11 @@ export default class GameController {
             const result = this.service.compare();
 
             // 피드백 출력 
-            console.log(OutputView.printCurrentState(result.ball, result.strike));
+            console.log(result.getCurrentState());
         
             // 만약, 다 맞으면 게임 종료
                     // 종료할 건지, 재시작할 건지 되묻기 
-            if (result.strike === 3) {
+            if (result.isThreeStrikeOut()) {
                 // 게임 종료 
                 this.end();
                 const answer = readlineSync.question(InputView.printAskGameEndOrRestart());

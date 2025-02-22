@@ -3,7 +3,6 @@ import GameService from '../../../src/service/GameService';
 import Balls from '../../../src/domain/Balls';
 import Computer from '../../../src/domain/Computer';
 import { doesNotThrow } from 'assert';
-import { error } from 'console';
 
 describe('게임 운영에서의 비즈니스 로직을 담당하는 객체 단위 테스트', () => {
     
